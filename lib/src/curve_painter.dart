@@ -94,8 +94,8 @@ class _CurvePainter extends CustomPainter {
 
     Offset handler = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
     canvas.drawCircle(handler, appearance.handlerSize, dotPaint);
-    Offset handlerInner = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius - 3);
-    canvas.drawCircle(handlerInner, appearance.handlerSize - 3, dotPaint);
+    Offset handlerInner = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius - 4);
+    canvas.drawCircle(handlerInner, appearance.handlerSize - 10, dotPaint);
   }
 
   drawCircularArc(
