@@ -90,19 +90,14 @@ class _CurvePainter extends CustomPainter {
     drawCircularArc(canvas: canvas, size: size, paint: progressBarPaint);
 
     var dotPaint = Paint()..color = appearance.dotColor;
-    dotPaint..strokeWidth = 4;
+    var dotInnerPaint = Paint()..color = appearance.dotInnerColor;
+    dotInnerPaint..strokeWidth = 3;
     dotPaint..style = PaintingStyle.stroke;
-    // dotPaint..style = PaintingStyle.fill;
-    // var dotInnerPaint = Paint()..color = appearance.dotInnerColor;
-    // dotPaint..strokeWidth = 3;
-    // dotPaint..strokeJoin = StrokeJoin.round;
-    // dotPaint..s;
 
     Offset handler = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
     canvas.drawCircle(handler, appearance.handlerSize, dotPaint);
-    // Offset handlerInner = degreesToCoordinates(
-    //     Offset(center!.dx, center!.dy), -math.pi / 2 + startAngle + currentAngle + 1.5, radius - 3);
-    // canvas.drawCircle(handlerInner, appearance.handlerSize - 3, dotInnerPaint);
+    Offset handlerInner = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
+    canvas.drawCircle(handlerInner, appearance.handlerSize, dotInnerPaint);
   }
 
   drawCircularArc(
