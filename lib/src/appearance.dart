@@ -24,7 +24,7 @@ class CircularSliderAppearance {
   static const Color _defaultShadowColor = Color.fromRGBO(44, 87, 192, 1.0);
   static const double _defaultShadowMaxOpacity = 0.2;
   static const Color _defaultDotColor = Colors.white;
-  static const Color _defaultDotInnerColor = Colors.white;
+  static const Color _defaultDotInnerColor = Colors.red;
 
   String _defaultPercentageModifier(double value) {
     final roundedValue = (value).ceil().toInt().toString();
