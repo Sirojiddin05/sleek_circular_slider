@@ -24,6 +24,7 @@ class CircularSliderAppearance {
   static const Color _defaultShadowColor = Color.fromRGBO(44, 87, 192, 1.0);
   static const double _defaultShadowMaxOpacity = 0.2;
   static const Color _defaultDotColor = Colors.white;
+  static const Color _defaultDotInnerColor = Colors.white;
 
   String _defaultPercentageModifier(double value) {
     final roundedValue = (value).ceil().toInt().toString();
@@ -65,7 +66,7 @@ class CircularSliderAppearance {
   }
 
   List<Color>? get _customTrackColors {
-  	return customColors?.trackColors;
+    return customColors?.trackColors;
   }
 
   double? get _gradientStartAngle => customColors?.gradientStartAngle;
@@ -77,26 +78,23 @@ class CircularSliderAppearance {
   double? get _customShadowMaxOpacity => customColors?.shadowMaxOpacity;
   double? get _customShadowStep => customColors?.shadowStep;
   Color? get _customDotColor => customColors?.dotColor;
+  Color? get _customDotInnerColor => customColors?.dotInnerColor;
   bool? get _hideShadow => customColors?.hideShadow;
 
   Color get trackColor => _customTrackColor ?? _defaultTrackColor;
   List<Color>? get trackColors => _customTrackColors;
-  List<Color> get progressBarColors =>
-      _customProgressBarColors ?? _defaultBarColors;
-  double get gradientStartAngle =>
-      _gradientStartAngle ?? _defaultGradientStartAngle;
+  List<Color> get progressBarColors => _customProgressBarColors ?? _defaultBarColors;
+  double get gradientStartAngle => _gradientStartAngle ?? _defaultGradientStartAngle;
   double get gradientStopAngle => _gradientEndAngle ?? _defaultGradientEndAngle;
-  double get trackGradientStartAngle =>
-      _trackGradientStartAngle ?? _defaultTrackGradientStartAngle;
-  double get trackGradientStopAngle =>
-      _trackGradientEndAngle ?? _defaultTrackGradientEndAngle;
+  double get trackGradientStartAngle => _trackGradientStartAngle ?? _defaultTrackGradientStartAngle;
+  double get trackGradientStopAngle => _trackGradientEndAngle ?? _defaultTrackGradientEndAngle;
   bool get dynamicGradient => _dynamicGradient ?? _defaultDynamicGradient;
   bool get hideShadow => _hideShadow ?? _defaultHideShadow;
   Color get shadowColor => _customShadowColor ?? _defaultShadowColor;
-  double get shadowMaxOpacity =>
-      _customShadowMaxOpacity ?? _defaultShadowMaxOpacity;
+  double get shadowMaxOpacity => _customShadowMaxOpacity ?? _defaultShadowMaxOpacity;
   double? get shadowStep => _customShadowStep;
   Color get dotColor => _customDotColor ?? _defaultDotColor;
+  Color get dotInnerColor => _customDotInnerColor ?? _defaultDotInnerColor;
 
   String? get _topLabelText => infoProperties?.topLabelText;
   String? get _bottomLabelText => infoProperties?.bottomLabelText;
@@ -105,29 +103,22 @@ class CircularSliderAppearance {
   TextStyle? get _bottomLabelStyle => infoProperties?.bottomLabelStyle;
   PercentageModifier? get _modifier => infoProperties?.modifier;
 
-  PercentageModifier get infoModifier =>
-      _modifier ?? _defaultPercentageModifier;
+  PercentageModifier get infoModifier => _modifier ?? _defaultPercentageModifier;
   String? get infoTopLabelText => _topLabelText;
   String? get infoBottomLabelText => _bottomLabelText;
   TextStyle get infoMainLabelStyle {
-    return _mainLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w100,
-        fontSize: size / 5.0,
-        color: Color.fromRGBO(30, 0, 59, 1.0));
+    return _mainLabelStyle ??
+        TextStyle(fontWeight: FontWeight.w100, fontSize: size / 5.0, color: Color.fromRGBO(30, 0, 59, 1.0));
   }
 
   TextStyle get infoTopLabelStyle {
-    return _topLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: size / 10.0,
-        color: Color.fromRGBO(147, 81, 120, 1.0));
+    return _topLabelStyle ??
+        TextStyle(fontWeight: FontWeight.w600, fontSize: size / 10.0, color: Color.fromRGBO(147, 81, 120, 1.0));
   }
 
   TextStyle get infoBottomLabelStyle {
-    return _bottomLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: size / 10.0,
-        color: Color.fromRGBO(147, 81, 120, 1.0));
+    return _bottomLabelStyle ??
+        TextStyle(fontWeight: FontWeight.w600, fontSize: size / 10.0, color: Color.fromRGBO(147, 81, 120, 1.0));
   }
 
   const CircularSliderAppearance(
@@ -150,11 +141,7 @@ class CustomSliderWidths {
   final double? handlerSize;
   final double? shadowWidth;
 
-  CustomSliderWidths(
-      {this.trackWidth,
-      this.progressBarWidth,
-      this.handlerSize,
-      this.shadowWidth});
+  CustomSliderWidths({this.trackWidth, this.progressBarWidth, this.handlerSize, this.shadowWidth});
 }
 
 class CustomSliderColors {
@@ -172,6 +159,7 @@ class CustomSliderColors {
   final double? shadowMaxOpacity;
   final double? shadowStep;
   final Color? dotColor;
+  final Color? dotInnerColor;
 
   CustomSliderColors(
       {this.trackColor,
@@ -187,6 +175,7 @@ class CustomSliderColors {
       this.shadowMaxOpacity,
       this.shadowStep,
       this.dotColor,
+      this.dotInnerColor,
       this.dynamicGradient = false});
 }
 
