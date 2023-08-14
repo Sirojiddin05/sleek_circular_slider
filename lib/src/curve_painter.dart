@@ -92,12 +92,12 @@ class _CurvePainter extends CustomPainter {
     var dotPaint = Paint()..color = appearance.dotColor;
     var dotInnerPaint = Paint()..color = appearance.dotInnerColor;
     dotInnerPaint..strokeWidth = 3;
-    dotPaint..style = PaintingStyle.stroke;
+    dotInnerPaint..style = PaintingStyle.stroke;
 
     Offset handler = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
     canvas.drawCircle(handler, appearance.handlerSize, dotPaint);
-    Offset handlerInner = degreesToCoordinates(center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
-    canvas.drawCircle(handlerInner, appearance.handlerSize, dotInnerPaint);
+
+    canvas.drawCircle(handler, appearance.handlerSize, dotInnerPaint);
   }
 
   drawCircularArc(
