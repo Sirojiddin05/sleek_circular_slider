@@ -90,7 +90,7 @@ class _CurvePainter extends CustomPainter {
     drawCircularArc(canvas: canvas, size: size, paint: progressBarPaint);
 
     var dotPaint = Paint()..color = appearance.dotColor;
-    dotPaint..strokeWidth = appearance.handlerSize - appearance.trackWidth;
+    dotPaint..strokeWidth = 4;
     dotPaint..style = PaintingStyle.stroke;
     // dotPaint..style = PaintingStyle.fill;
     // var dotInnerPaint = Paint()..color = appearance.dotInnerColor;
